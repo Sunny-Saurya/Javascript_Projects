@@ -1,0 +1,109 @@
+<!-- how to create counter -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counters</title>
+
+    <style>
+        .container {
+            margin-left: 500px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 2px solid #1a911a;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 40vh;
+            width: 30vw;
+            font-size: 50px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            height: 50px;
+            width: 100px;
+        }
+
+        .btn:hover {
+            background-color: #3e8e41;
+        }
+
+        .btn:active {
+            background-color: #3e8e41;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .container button {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .btn {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                width: 90%;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: #333;">
+    <div class="container">
+        <h2>Counter</h2>
+
+        <h4 class="show"></h4>
+
+        <button id="decrement" class="btn">Decrease</button>
+        <button id="reset" class="btn">Reset</button>
+        <button id="increment" class="btn">Increase</button>
+    </div>
+
+    <script>
+        const decrement = document.querySelector("#decrement")
+        const reset = document.querySelector("#reset")
+        const increment = document.querySelector("#increment")
+        const show = document.querySelector(".show")
+
+        let count = 0
+        show.innerHTML = count
+
+        decrement.addEventListener("click", function () {
+            count = count - 1
+            show.innerHTML = count
+        })
+
+        increment.addEventListener("click", function () {
+            count = count + 1
+            show.innerHTML = count
+        })
+
+        reset.addEventListener("click", function () {
+            count = 0
+            show.innerHTML = count
+        })
+
+    </script>
+</body>
+
+</html>
