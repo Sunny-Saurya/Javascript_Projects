@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calgulator</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+        }
+        .container{
+            /* height: 100vh; */
+            margin-top: 150px;
+            display: flex;
+            justify-content: center;
+        }
+
+        form{
+            background:rgb(4, 32, 37);
+            padding: 20px;
+            border-radius: 10px;
+            border: 3px solid rgb(0, 0, 0);
+            width: 20vw;
+            
+        }
+        form input{
+            cursor: pointer;
+            /* margin-left: 20px; */
+        }
+
+        .container form input{
+            height: 50px;
+            width: 50px;
+            padding: 20px;
+            margin: 2x;
+            margin-top: 10px;
+        }
+        .container form .equal{
+            width: 120px;
+        }
+      
+        form input{
+            border-radius: 10px;
+            margin: 5px;
+            margin-left: 13px;
+            box-shadow: 2px 2px 3px black;
+        }
+  .display input[type="button"] {
+    width: 18.5vw;
+    padding: 10px;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: black;
+  }
+
+  /* Button styles */
+  input[type="button"] {
+    width: 25%;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  input[type="button"]:hover {
+    background-color: #3e8e41;
+  }
+  input[type="button"]:hover {
+    background-color: #3e8e41;
+  }
+
+  input[type="button"]:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  input[type="button"]:hover:before {
+    transform: translateY(-4px);
+  }
+
+  input[type="button"]:active:before {
+    transform: translateY(-6px);
+  }
+
+  /* Equal button styles */
+  .equal {
+    background-color: #ff9800;
+  }
+
+  .equal:hover {
+    background-color: #ff9900;
+  }
+
+  .equal:active {
+    background-color: #ff9900;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .head{
+    /* background-color: #4CAF50; */
+    color: #fff;
+    /* border: 2px solid #ff9800; */
+    text-align: center;
+    margin-top: 60px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .display{
+    text-align-last: right
+  }
+
+  .position1 input,.position .star, .position .minus, .position .add{
+    background-color: #ff9800;
+  }
+    </style>
+</head>
+<body>
+    <h1 class = "head">Calcularific </h1>
+    <div class="container">
+        
+        <form>
+            <div class="display">
+                <input type="button" name="display">
+            </div>
+
+            <div class = "position1">
+                <input type="button" value = "AC" onclick="display.value = ' ' ">
+                <input type="button" value = "DE" onclick="display.value = display.value.toString().slice(0,-1)">
+                <input type="button" value = "." onclick="display.value += '.' ">
+                <input type="button" value = "/" onclick="display.value += '/' ">
+            </div>
+            <div class = "position">
+                <input type="button"  value = "7" onclick="display.value += '7' ">
+                <input type="button" value = "8" onclick="display.value += '8' ">
+                <input type="button" value = "9" onclick="display.value += '9' ">
+                <input type="button" value = "*" onclick="display.value += '*' " class = "star">
+            </div>
+            <div class = "position">
+                <input type="button" value = "4" onclick="display.value += '4' ">
+                <input type="button" value = "5" onclick="display.value += '5' ">
+                <input type="button" value = "6" onclick="display.value += '6' ">
+                <input type="button" value = "-" onclick="display.value += '-' " class = "minus">
+            </div>
+            <div class = "position">
+                <input type="button" value = "1" onclick="display.value += '1' " >
+                <input type="button" value = "2" onclick="display.value += '2' ">
+                <input type="button" value = "3" onclick="display.value += '3' ">
+                <input type="button" value = "+" onclick="display.value += '+' " class = "add">
+            </div>
+            <div class = "position">
+                <input type="button" value = "00" onclick="display.value += '00' " >
+                <input type="button" value = "0" onclick="display.value += '0' ">
+                <input type="button" value = "=" onclick="display.value = eval(display.value)" class="equal">
+            </div>
+        </form>
+
+    </div>
+
+
+    <script>
+        var display = document.querySelector('.display');
+        display.value = 0;
+    
+    </script>
+</body>
+</html>
