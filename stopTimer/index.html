@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopTimer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="display">
+            <div class="time">00 : 00 : 00 : 000</div>
+        </div>
+        <div class="btns">
+            <button class="start">Start</button>
+            <button class="stop">Stop</button>
+            <button class="reset">Reset</button>
+
+        </div>
+    </div>
+
+    <script>
+        let [milliseconds, seconds, minutes, hours] = [0,0,0,0];
+        let display = document.querySelector(".time")
+
+        let int;
+
+        document.querySelector(".start").addEventListener("click",()=>{
+            int = setInterval(displayTimer,10);
+        })
+        document.querySelector(".stop").addEventListener("click",()=>{
+            clearInterval(int);
+
+        })
+
+        function displayTimer(){
+            milliseconds = milliseconds + 10;
+            if(milliseconds == 1000)
+            {
+                milliseconds = 0;
+                seconds++;
+
+                if(seconds == 60)
+                {
+                    seconds = 0;
+                    minutes++;
+
+                    if(minutes == 60)
+                    {
+                        minutes = 0;
+                        hours++;
+                    }
+                }
+            }
+            let h = hours < 10? "0" + hours : hours;
+            let m = minutes < 10? "0" + minutes : minutes;
+            let s = seconds < 10? "0" + seconds : seconds;
+            let ms = milliseconds < 100? "00" + milliseconds : milliseconds < 10? "0" + milliseconds : milliseconds;
+
+            display.innerHTML = `${h} : ${m} : ${s} : ${ms}`
+
+        }
+
+        document.querySelector(".reset").addEventListener("click",() =>{
+            clearInterval(int);
+            [milliseconds, seconds, minutes, hours] = [0,0,0,0];
+            display.innerHTML = "00 : 00 : 00 : 000";
+        })
+    </script>
+</body>
+</html>
