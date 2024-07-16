@@ -1,0 +1,149 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    /* display: block; */
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    background-color: #1b3083;
+
+}
+
+.card {
+    width: 400px;
+    /* height:auto; */
+    background-color: white;
+    /* border: 2px solid green; */
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    ransition: opacity 0.5s ease-in-out;
+    /* display: block; */
+}
+
+.card h3 {
+    text-align: center;
+    font-size: 35px;
+    color: #373738;
+    margin-bottom: 30px;
+}
+
+.card p {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.card .btn {
+    width: 80%;
+    height: 40px;
+    background-color: #2b831b;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    margin: 30px;
+}
+
+.img img {
+    width: 80px;
+    margin-left: 150px;
+    margin-bottom: 0px;
+    /* margin-top: 150px;
+    z-index: 1; */
+}
+
+.submit {
+    width: 10%;
+    height: 40px;
+    background-color: #2b831b;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    margin: 30px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* margin:-0px; */
+    /* margin-bottom: 300px; */
+    cursor: pointer;
+    
+    
+
+}
+
+.submit:hover {
+    /* background-color: #298716; */
+    border: 1px solid rgb(24, 24, 124);
+    
+}
