@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img src="back.png" alt="" id = "backBtn">
+        <div class="gallery">
+            <div>
+                <span><img src="image-1.png" alt=""></span>
+                
+                <span><img src="image-2.png" alt=""></span>
+                
+                <span><img src="image-3.png" alt=""></span>
+            </div>
+            <div>
+                <span><img src="image-4.png" alt=""></span>
+                
+                <span><img src="image-5.png" alt=""></span>
+                
+                <span><img src="image-6.png" alt=""></span>
+            </div>
+        </div>
+        <img src="next.png" alt="" id = "nextBtn">
+    </div>
+
+    <script>
+        let scrollContainer = document.querySelector(".gallery")
+
+        let backBtn = document.getElementById("backBtn")
+
+        let nextBtn = document.getElementById("nextBtn")
+
+        // remove horizontal sroll bar showing down the picture
+
+        scrollContainer.addEventListener("wheel", (evt) =>{
+            evt.preventDefault()
+            scrollContainer.scrollLeft += evt.deltaY
+            scrollContainer.style.scrollBehavior = "auto"
+
+        })
+
+        // adding functinality into the next button
+
+        nextBtn.addEventListener("click", () =>{
+            scrollContainer.style.scrollBehavior = "smooth"
+            scrollContainer.scrollLeft += 900
+        })
+
+        // adding functionality into the back button
+        backBtn.addEventListener("click", () =>{
+            scrollContainer.style.scrollBehavior = "smooth"
+            scrollContainer.scrollLeft -= 900
+        })
+    </script>
+</body>
+</html>

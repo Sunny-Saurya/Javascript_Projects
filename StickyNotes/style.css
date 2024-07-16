@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(135deg, #38addf, #b3be0f);
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.card-header{
+    background-color: #b3be0f;
+    width:200px;
+    height: 40px;
+    margin-bottom: 30px;
+}
+.card-header h4{
+    margin-top: -30px;
+    /* color: #fff; */
+}
+.card-body{
+    background-color: #6b6b64;
+    height: auto;
+    width: 200px;
+    color: white;
+    
+}
+.card-header img{
+    height: 35px;
+    width: 35px;
+    margin-left: 140px;
+    /* margin-top: -20px; */
+
+}
+.card-body p{
+    margin-top: -30px;
+}
+

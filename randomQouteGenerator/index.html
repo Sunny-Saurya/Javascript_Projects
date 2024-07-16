@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qoute Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Playfair Display", serif;
+            
+        }
+        
+        
+        .qoute-box{
+            width: 700px;
+            background:#fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 10px 20px 0px rgba(0, 0,0 ,0.15);
+        }
+        .qoute-box h2{
+            /* color: #333; */
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .qoute-box h2::after{
+            content: '';
+            width:75px;
+            height: 3px;
+            border-radius: 3px;
+            background: rgb(23,124,229);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .qoute-box blockquote{
+            font-size: 20px;
+            min-height:110px ;
+        }
+        .qoute-box blockquote::before, .qoute-box blockquote::after{
+            content: '"';
+
+        }
+        .qoute-box span{
+            display: block;
+            margin-top: 10px;
+            float: right;
+            position: relative;
+        }
+
+        .qoute-box span::before{
+            content: '';
+            width: 20px;
+            height: 2px;
+            background: rgb(23,124,229);
+            position: absolute;
+            top: 50%;
+            left: -30px;
+        }
+        .qoute-box div{
+            /* width: 100px; */
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+
+        }
+        .qoute-box div button{
+            background: rgb(23,124,229);
+            color: #ffff;
+            border-radius: 5px;
+            border: 1px solid rgb(23,124,229);
+            width: 100px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+            cursor: pointer;
+        }
+        button{
+            background: rgb(23,124,229);
+        }
+        .image{
+          width: 25%;
+          height: 50%;
+          margin: 0 auto;
+    
+        }
+
+    </style>
+</head>
+<body>
+    <div class="qoute-box">
+        <h2>Qoute Of The Day</h2>
+        <blockquote id = "qoute">Loading...</blockquote>
+        <span id = "author">Loading...</span>
+        <div>
+            <button onclick="getQoute(api_url)">New Qoute</button>
+            <button onclick="tweet()" id="tweet"><img class="image" src="twitter.png" alt="">Tweet</button>
+        </div>
+    </div>
+<script>
+    const api_url = "https://api.quotable.io/random"
+
+    const author = document.getElementById("author")
+
+    const qoute = document.getElementById("qoute")
+
+    async function getQoute(url){
+        const response = await fetch(url)
+        var data = await response.json()
+        console.log(data)
+        qoute.innerHTML = data.content;
+        author.innerHTML = data.author;
+    }
+
+    getQoute(api_url)
+
+    function tweet(){
+        window.open("https://twitter.com/intent/tweet?text= + qoute.innerHTML + '___by' + author.innerHTML")
+    }
+</script>
+</body>
+</html>
