@@ -7,8 +7,7 @@
 
 body{
     background: linear-gradient(105deg, #e82ce5, #06489f);
-    background-size: cover;
-    background-repeat: no-repeat;
+    
     height: 100vh;
     width: 100vw;
 }
@@ -41,7 +40,7 @@ form input{
     border: none;
     outline: none;
     /* background-color: transparent; */
-    color: #fff;
+    color: #000000;
     font-size:18px;
     padding: 0 30px;
 }
